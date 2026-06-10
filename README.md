@@ -21,9 +21,13 @@ O sistema oferece um menu interativo com as seguintes operações:
 *   **Funções de Arquivo**: `fseek()`, `fread()`, `fwrite()`, `rewind()`, `fopen()`, `fclose()`
 
 | **Cadastrar** | `fseek()` + `fwrite()` | Move o ponteiro para o offset exato (`pos * sizeof(Cliente)`) e grava o registro. |
+
 | **Consultar** | `fread()` | Percorre o arquivo sequencialmente para localizar o `numeroConta` correspondente. |
+
 | **Atualizar** | `fseek()` + `fwrite()` | Após localizar o registro, retrocede o ponteiro (`fseek` com offset negativo) para sobrescrever apenas aquele bloco. |
+
 | **Encerrar** | `fseek()` + `fwrite()` | Sobrescreve o registro com dados "zerados" (remoção lógica), mantendo a integridade do arquivo. |
+
 | **Listar** | `rewind()` | Reseta o ponteiro para o início do arquivo antes de iniciar a leitura, garantindo que nenhum dado seja omitido. |
 
 ## Como Compilar e Executar
