@@ -1,0 +1,6 @@
+# Ignora arquivos binários compilados
+*.exe
+*.o
+
+# Ignora o banco de dados local
+contas.bin
